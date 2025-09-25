@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # act6
 
 A new Flutter project.
@@ -15,6 +14,3 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
-=======
-# rocket_launch
->>>>>>> f5708775e7cef893b288292896c4f88a40900a58
