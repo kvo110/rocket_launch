@@ -42,6 +42,43 @@ class _CounterWidgetState extends State<CounterWidget> {
     }
   }
   
+  void _checkLaunchSuccess() {
+    if (_counter == 100) {
+      // shows the dialog
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            backgroundColor: Colors.deepPurple[100],
+            title: const Text(
+              "Launch Successful!",
+              textAlign: TextAlign.center,
+            ),
+            content: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Icon(Icons.rocket_launch, size: 80, color: Colors.blueGrey),
+                SizedBox(height: 16),
+                Text(
+                  "Congratulations! Your rocket has successfully launched!",
+                  textAlign: TextAlign.center,
+                ),
+              ],
+            ),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop(); // closes the dialog
+                },
+                child: const Text("Close"),
+              ),
+            ],
+          );
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,6 +110,7 @@ class _CounterWidgetState extends State<CounterWidget> {
             onChanged: (double value) {
               setState(() {
                 _counter = value.toInt();
+                _checkLaunchSuccess(); 
               });
             },
             activeColor: Colors.blue,
